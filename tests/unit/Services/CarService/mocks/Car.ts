@@ -56,4 +56,33 @@ const findByIdOutput = {
   __v: 0,
 };
 
-export { createInput, createOutput, findAllOutput, findByIdOutput };
+const updateInput = {
+  model: 'Marea',
+  year: 1992,
+  color: 'Red',
+  status: true,
+  buyValue: 12.0,
+  doorsQty: 2,
+  seatsQty: 5,
+};
+
+const updateOutput = {
+  _id: '6376922a90cf9e9467abd2b6',
+  model: 'Marea',
+  year: 1992,
+  color: 'Red',
+  status: true,
+  buyValue: 12.0,
+  doorsQty: 2,
+  seatsQty: 5,
+  __v: 0,
+};
+
+export {
+  createInput,
+  createOutput,
+  findAllOutput,
+  findByIdOutput,
+  updateInput,
+  updateOutput,
+};

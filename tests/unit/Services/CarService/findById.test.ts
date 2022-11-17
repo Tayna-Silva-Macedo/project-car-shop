@@ -40,7 +40,7 @@ describe('Deveria retornar um carro pelo seu id', function () {
 
     const output: Car = new Car(findByIdOutput);
 
-    sinon.stub(Model, 'findById').resolves(output);
+    sinon.stub(Model, 'findById').resolves(findByIdOutput);
 
     const service = new CarService();
     const result = await service.findById(input);

@@ -10,7 +10,7 @@ describe('Deveria retornar todos os carros', function () {
   it('Retorna todos os carros com SUCESSO', async function () {
     const output: Car[] = findAllOutput.map((car) => new Car(car));
 
-    sinon.stub(Model, 'find').resolves(output);
+    sinon.stub(Model, 'find').resolves(findAllOutput);
 
     const service = new CarService();
     const result = await service.findAll();
