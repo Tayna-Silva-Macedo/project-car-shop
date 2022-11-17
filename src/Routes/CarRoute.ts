@@ -6,6 +6,9 @@ const router = Router();
 router.post('/', (req, res, next) =>
   new CarController(req, res, next).create());
 
+router.get('/:id', (req, res, next) =>
+  new CarController(req, res, next).findById());
+
 router.get('/', (req, res, next) =>
   new CarController(req, res, next).findAll());
 
