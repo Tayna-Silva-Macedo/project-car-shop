@@ -30,4 +30,10 @@ export default class CarODM extends AbstractODM<ICar> {
 
     return this.model.findById(id);
   }
+
+  public async update(id: string, obj: ICar): Promise<ICar | null> {
+    if (!isValidObjectId(id)) throw new HttpException(422, 'Invalid mongo id');
+
+    return this.model.findByIdAndUpdate({ _id: id }, { ...obj }, { new: true });
+  }
 }
