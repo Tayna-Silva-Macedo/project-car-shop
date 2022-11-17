@@ -19,4 +19,8 @@ export default class CarODM extends AbstractODM<ICar> {
   public async create(obj: ICar): Promise<ICar> {
     return this.model.create({ ...obj });
   }
+
+  public async findAll(): Promise<ICar[]> {
+    return this.model.find();
+  }
 }
