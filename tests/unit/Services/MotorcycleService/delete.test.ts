@@ -34,14 +34,14 @@ describe('Deveria deletar uma moto pelo seu id', function () {
     }
   });
 
-  // it('Deleta uma moto com SUCESSO', async function () {
-  //   const idInput = '634852326b35b59438fbea2f';
+  it('Deleta uma moto com SUCESSO', async function () {
+    const idInput = '634852326b35b59438fbea2f';
 
-  //   sinon.stub(Model, 'findByIdAndDelete').resolves(deleteOutput);
+    sinon.stub(Model, 'findByIdAndDelete').resolves(deleteOutput);
 
-  //   const service = new CarService();
-  //   const result = await service.delete(idInput);
+    const service = new MotorcycleService();
+    const result = await service.delete(idInput);
 
-  //   expect(result).to.be.equal(undefined);
-  // });
+    expect(result).to.be.equal(undefined);
+  });
 });
