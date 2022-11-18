@@ -1,5 +1,4 @@
-import { isValidObjectId, Schema } from 'mongoose';
-import HttpException from '../helpers/HttpException';
+import { Schema } from 'mongoose';
 import ICar from '../Interfaces/ICar';
 import AbstractODM from './AbstractODM';
 
@@ -15,11 +14,5 @@ export default class CarODM extends AbstractODM<ICar> {
       seatsQty: { type: Number, required: true },
     });
     super(schema, 'Car');
-  }
-  
-  public async update(id: string, obj: ICar): Promise<ICar | null> {
-    if (!isValidObjectId(id)) throw new HttpException(422, 'Invalid mongo id');
-
-    return this.model.findByIdAndUpdate({ _id: id }, { ...obj }, { new: true });
   }
 }

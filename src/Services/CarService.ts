@@ -8,7 +8,6 @@ export default class CarService {
     if (car) {
       return new Car(car);
     }
-
     return null;
   }
 

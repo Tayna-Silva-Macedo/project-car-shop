@@ -8,7 +8,6 @@ export default class MotorcycleService {
     if (motorcycle) {
       return new Motorcycle(motorcycle);
     }
-
     return null;
   }
 
@@ -33,5 +32,14 @@ export default class MotorcycleService {
     if (!motorcycle) throw new HttpException(404, 'Motorcycle not found');
 
     return this.createMotorcycleDomain(motorcycle);
+  }
+
+  public async update(id: string, obj: IMotorcycle) {
+    const motorcycleODM = new MotorcycleODM();
+    const motorcycleUpdated = await motorcycleODM.update(id, obj);
+    
+    if (!motorcycleUpdated) throw new HttpException(404, 'Motorcycle not found');
+
+    return this.createMotorcycleDomain(motorcycleUpdated);
   }
 }
