@@ -25,17 +25,16 @@ describe('Deveria deletar um carro pelo seu id', function () {
     }
   });
 
-  // it('Não é possível atualizar um carro quando o formato do id esta inválido', async function () {
-  //   const idInput = 'abc123';
-  //   const objInput: ICar = updateInput;
+  it('Não é possível deletar um carro quando o formato do id esta inválido', async function () {
+    const idInput = 'abc123';
 
-  //   try {
-  //     const service = new CarService();
-  //     await service.update(idInput, objInput);
-  //   } catch (error) {
-  //     expect((error as Error).message).to.be.equal('Invalid mongo id');
-  //   }
-  // });
+    try {
+      const service = new CarService();
+      await service.destroy(idInput);
+    } catch (error) {
+      expect((error as Error).message).to.be.equal('Invalid mongo id');
+    }
+  });
 
   // it('Atualiza um carro com SUCESSO', async function () {
   //   const idInput = '634852326b35b59438fbea31';
