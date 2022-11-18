@@ -19,5 +19,7 @@ describe('Deveria cadastrar um novo carro', function () {
     const result = await service.create(input);
 
     expect(result).to.be.deep.equal(output);
+
+    sinon.restore();
   });
 });

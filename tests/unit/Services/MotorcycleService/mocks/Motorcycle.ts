@@ -48,4 +48,15 @@ const findAllOutput = [
   },
 ];
 
-export { createInput, createOutput, findAllOutput };
+const findByIdOutput = {
+  id: '634852326b35b59438fbea31',
+  model: HONDA_CBR,
+  year: 2011,
+  color: 'Orange',
+  status: true,
+  buyValue: 59.9,
+  category: 'Street' as MotorcycleCategoryTypes,
+  engineCapacity: 1000,
+};
+
+export { createInput, createOutput, findAllOutput, findByIdOutput };

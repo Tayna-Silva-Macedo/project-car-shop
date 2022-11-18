@@ -16,5 +16,7 @@ describe('Deveria retornar todos os carros', function () {
     const result = await service.findAll();
 
     expect(result).to.be.deep.equal(output);
+
+    sinon.restore();
   });
 });
