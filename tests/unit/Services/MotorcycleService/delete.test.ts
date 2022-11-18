@@ -23,16 +23,16 @@ describe('Deveria deletar uma moto pelo seu id', function () {
     }
   });
 
-  // it('Não é possível deletar uma moto quando o formato do id esta inválido', async function () {
-  //   const idInput = 'abc123';
+  it('Não é possível deletar uma moto quando o formato do id esta inválido', async function () {
+    const idInput = 'abc123';
 
-  //   try {
-  //     const service = new CarService();
-  //     await service.delete(idInput);
-  //   } catch (error) {
-  //     expect((error as Error).message).to.be.equal('Invalid mongo id');
-  //   }
-  // });
+    try {
+      const service = new MotorcycleService();
+      await service.delete(idInput);
+    } catch (error) {
+      expect((error as Error).message).to.be.equal('Invalid mongo id');
+    }
+  });
 
   // it('Deleta uma moto com SUCESSO', async function () {
   //   const idInput = '634852326b35b59438fbea2f';
