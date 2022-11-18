@@ -1,7 +1,10 @@
 type MotorcycleCategoryTypes = 'Street' | 'Custom' | 'Trail';
 
+const HONDA_HORNET = 'Honda Cb 600f Hornet';
+const HONDA_CBR = 'Honda Cbr 1000rr';
+
 const createInput = {
-  model: 'Honda Cb 600f Hornet',
+  model: HONDA_HORNET,
   year: 2005,
   color: 'Yellow',
   status: true,
@@ -12,7 +15,7 @@ const createInput = {
 
 const createOutput = {
   _id: '6348513f34c397abcad040b2',
-  model: 'Honda Cb 600f Hornet',
+  model: HONDA_HORNET,
   year: 2005,
   color: 'Yellow',
   status: true,
@@ -22,4 +25,27 @@ const createOutput = {
   __v: 0,
 };
 
-export { createInput, createOutput };
+const findAllOutput = [
+  {
+    id: '634852326b35b59438fbea2f',
+    model: HONDA_HORNET,
+    year: 2005,
+    color: 'Yellow',
+    status: true,
+    buyValue: 30.0,
+    category: 'Street' as MotorcycleCategoryTypes,
+    engineCapacity: 600,
+  },
+  {
+    id: '634852326b35b59438fbea31',
+    model: HONDA_CBR,
+    year: 2011,
+    color: 'Orange',
+    status: true,
+    buyValue: 59.9,
+    category: 'Street' as MotorcycleCategoryTypes,
+    engineCapacity: 1000,
+  },
+];
+
+export { createInput, createOutput, findAllOutput };
