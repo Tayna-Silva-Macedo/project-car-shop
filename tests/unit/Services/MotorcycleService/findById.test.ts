@@ -24,16 +24,16 @@ describe('Deveria retornar uma moto pelo seu id', function () {
     }
   });
 
-  // it('Não é possível retornar um carro quando o formato do id esta inválido', async function () {
-  //   const input = 'abc123';
+  it('Não é possível retornar uma moto quando o formato do id esta inválido', async function () {
+    const input = 'abc123';
 
-  //   try {
-  //     const service = new CarService();
-  //     await service.findById(input);
-  //   } catch (error) {
-  //     expect((error as Error).message).to.be.equal('Invalid mongo id');
-  //   }
-  // });
+    try {
+      const service = new MotorcycleService();
+      await service.findById(input);
+    } catch (error) {
+      expect((error as Error).message).to.be.equal('Invalid mongo id');
+    }
+  });
 
   // it('Retorna um carro específico com SUCESSO', async function () {
   //   const input = '6376922a90cf9e9467abd2b6';
