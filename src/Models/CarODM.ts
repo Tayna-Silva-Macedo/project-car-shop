@@ -17,10 +17,6 @@ export default class CarODM extends AbstractODM<ICar> {
     super(schema, 'Car');
   }
   
-  public async findAll(): Promise<ICar[]> {
-    return this.model.find();
-  }
-
   public async findById(id: string): Promise<ICar | null> {
     if (!isValidObjectId(id)) throw new HttpException(422, 'Invalid mongo id');
 
