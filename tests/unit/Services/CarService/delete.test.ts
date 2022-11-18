@@ -2,10 +2,8 @@ import { expect } from 'chai';
 import { Model } from 'mongoose';
 import sinon from 'sinon';
 
-import Car from '../../../../src/Domains/Car';
-import ICar from '../../../../src/Interfaces/ICar';
 import CarService from '../../../../src/Services/CarService';
-import { updateInput, updateOutput } from './mocks/Car';
+import { deleteOutput } from './mocks/Car';
 
 describe('Deveria deletar um carro pelo seu id', function () {
   afterEach(function () {
@@ -36,17 +34,14 @@ describe('Deveria deletar um carro pelo seu id', function () {
     }
   });
 
-  // it('Atualiza um carro com SUCESSO', async function () {
-  //   const idInput = '634852326b35b59438fbea31';
-  //   const objInput: ICar = updateInput;
+  it('Deleta um carro com SUCESSO', async function () {
+    const idInput = '6376922a90cf9e9467abd2b6';
 
-  //   const output: Car = new Car(updateOutput);
+    sinon.stub(Model, 'findByIdAndDelete').resolves(deleteOutput);
 
-  //   sinon.stub(Model, 'findByIdAndUpdate').resolves(updateOutput);
+    const service = new CarService();
+    const result = await service.destroy(idInput);
 
-  //   const service = new CarService();
-  //   const result = await service.update(idInput, objInput);
-
-  //   expect(result).to.be.deep.equal(output);
-  // });
+    expect(result).to.be.equal(true);
+  });
 });
