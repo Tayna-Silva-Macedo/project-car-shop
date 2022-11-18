@@ -76,7 +76,7 @@ const updateOutput = {
   color: 'Red',
   status: true,
   buyValue: 45.0,
-  category: 'Street',
+  category: 'Street' as MotorcycleCategoryTypes,
   engineCapacity: 600,
 };
 

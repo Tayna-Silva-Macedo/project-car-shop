@@ -38,17 +38,17 @@ describe('Deveria atualizar uma moto pelo seu id', function () {
     }
   });
 
-  // it('Atualiza um carro com SUCESSO', async function () {
-  //   const idInput = '634852326b35b59438fbea31';
-  //   const objInput: ICar = updateInput;
+  it('Atualiza uma moto com SUCESSO', async function () {
+    const idInput = '634852326b35b59438fbea2f';
+    const objInput: IMotorcycle = updateInput;
 
-  //   const output: Car = new Car(updateOutput);
+    const output: Motorcycle = new Motorcycle(updateOutput);
 
-  //   sinon.stub(Model, 'findByIdAndUpdate').resolves(updateOutput);
+    sinon.stub(Model, 'findByIdAndUpdate').resolves(updateOutput);
 
-  //   const service = new CarService();
-  //   const result = await service.update(idInput, objInput);
+    const service = new MotorcycleService();
+    const result = await service.update(idInput, objInput);
 
-  //   expect(result).to.be.deep.equal(output);
-  // });
+    expect(result).to.be.deep.equal(output);
+  });
 });
