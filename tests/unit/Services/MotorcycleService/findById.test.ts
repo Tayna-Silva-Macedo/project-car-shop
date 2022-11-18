@@ -35,16 +35,16 @@ describe('Deveria retornar uma moto pelo seu id', function () {
     }
   });
 
-  // it('Retorna um carro específico com SUCESSO', async function () {
-  //   const input = '6376922a90cf9e9467abd2b6';
+  it('Retorna uma moto específica com SUCESSO', async function () {
+    const input = '634852326b35b59438fbea31';
 
-  //   const output: Car = new Car(findByIdOutput);
+    const output: Motorcycle = new Motorcycle(findByIdOutput);
 
-  //   sinon.stub(Model, 'findById').resolves(findByIdOutput);
+    sinon.stub(Model, 'findById').resolves(findByIdOutput);
 
-  //   const service = new CarService();
-  //   const result = await service.findById(input);
+    const service = new MotorcycleService();
+    const result = await service.findById(input);
 
-  //   expect(result).to.be.deep.equal(output);
-  // });
+    expect(result).to.be.deep.equal(output);
+  });
 });
