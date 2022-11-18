@@ -80,6 +80,17 @@ const updateOutput = {
   engineCapacity: 600,
 };
 
+const deleteOutput = {
+  id: '634852326b35b59438fbea2f',
+  model: HONDA_HORNET,
+  year: 2014,
+  color: 'Red',
+  status: true,
+  buyValue: 45.0,
+  category: 'Street' as MotorcycleCategoryTypes,
+  engineCapacity: 600,
+};
+
 export {
   createInput,
   createOutput,
@@ -87,4 +98,5 @@ export {
   findByIdOutput,
   updateInput,
   updateOutput,
+  deleteOutput,
 };
