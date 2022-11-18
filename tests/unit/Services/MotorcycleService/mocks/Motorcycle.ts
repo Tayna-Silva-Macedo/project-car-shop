@@ -59,4 +59,32 @@ const findByIdOutput = {
   engineCapacity: 1000,
 };
 
-export { createInput, createOutput, findAllOutput, findByIdOutput };
+const updateInput = {
+  model: HONDA_HORNET,
+  year: 2014,
+  color: 'Red',
+  status: true,
+  buyValue: 45.0,
+  category: 'Street' as MotorcycleCategoryTypes,
+  engineCapacity: 600,
+};
+
+const updateOutput = {
+  id: '634852326b35b59438fbea2f',
+  model: HONDA_HORNET,
+  year: 2014,
+  color: 'Red',
+  status: true,
+  buyValue: 45.0,
+  category: 'Street',
+  engineCapacity: 600,
+};
+
+export {
+  createInput,
+  createOutput,
+  findAllOutput,
+  findByIdOutput,
+  updateInput,
+  updateOutput,
+};
