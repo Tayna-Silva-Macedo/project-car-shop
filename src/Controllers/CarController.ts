@@ -64,8 +64,19 @@ export default class CarController {
     };
 
     try {
-      const carUpdated = await this.service.update(id, car);  
+      const carUpdated = await this.service.update(id, car);
       return this.res.status(200).json(carUpdated);
+    } catch (error) {
+      this.next(error);
+    }
+  }
+
+  public async delete() {
+    const { id } = this.req.params;
+
+    try {
+      await this.service.delete(id);
+      return this.res.status(204).end();
     } catch (error) {
       this.next(error);
     }

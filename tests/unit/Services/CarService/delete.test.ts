@@ -17,7 +17,7 @@ describe('Deveria deletar um carro pelo seu id', function () {
 
     try {
       const service = new CarService();
-      await service.destroy(idInput);
+      await service.delete(idInput);
     } catch (error) {
       expect((error as Error).message).to.be.equal('Car not found');
     }
@@ -28,7 +28,7 @@ describe('Deveria deletar um carro pelo seu id', function () {
 
     try {
       const service = new CarService();
-      await service.destroy(idInput);
+      await service.delete(idInput);
     } catch (error) {
       expect((error as Error).message).to.be.equal('Invalid mongo id');
     }
@@ -40,8 +40,8 @@ describe('Deveria deletar um carro pelo seu id', function () {
     sinon.stub(Model, 'findByIdAndDelete').resolves(deleteOutput);
 
     const service = new CarService();
-    const result = await service.destroy(idInput);
+    const result = await service.delete(idInput);
 
-    expect(result).to.be.equal(true);
+    expect(result).to.be.equal(undefined);
   });
 });
