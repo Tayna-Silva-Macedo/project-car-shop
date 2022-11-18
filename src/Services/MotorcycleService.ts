@@ -1,4 +1,5 @@
 import Motorcycle from '../Domains/Motorcycle';
+import HttpException from '../helpers/HttpException';
 import IMotorcycle from '../Interfaces/IMotorcycle';
 import MotorcycleODM from '../Models/MotorcycleODM';
 
@@ -19,9 +20,18 @@ export default class MotorcycleService {
 
   public async findAll() {
     const motorcycleODM = new MotorcycleODM();
-    const motorcycles = await motorcycleODM.findAll();
+    const motorcycles = await motorcycleODM.findAll(); 
     const motorcycleArray = motorcycles.map((motorcycle) =>
       this.createMotorcycleDomain(motorcycle));
     return motorcycleArray;
+  }
+
+  public async findById(id: string) {
+    const motorcycleODM = new MotorcycleODM();
+    const motorcycle = await motorcycleODM.findById(id);
+
+    if (!motorcycle) throw new HttpException(404, 'Motorcycle not found');
+
+    return this.createMotorcycleDomain(motorcycle);
   }
 }
